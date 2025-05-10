@@ -1,0 +1,129 @@
+---
+title: "Exercise 8.1: Publish this doc"
+author: 
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Introduction
+
+To cap our introduction to version control with GitHub, in this
+worksheet we are going to publish this document as an .html file hosted
+on GitHub.
+
+This you could use in many ways. Why not use it as a virtual handout in
+a conference (pointed at via a QR code), linked to your poster or
+presentation, where people can see extended data or demonstrations.
+
+You could use, for instance, insert video that you uploaded on
+[FigShare](https://figshare.com/), one solution to store media and data.
+If you are at UoL you can use the [institutional
+figshare](http://figshare.le.ac.uk/).
+
+# Start 
+Start by creating a repository. The repository has to be **public** unless you have a pro account.
+
+The repository name has to be <name>.github.io and not simply <name>, for instance fog.github.io. Make sure it is public.
+
+Note the published page will be public even if the repository is private.
+
+# Create your site
+Now clone this repository locally and put this file page in there. 
+
+Navigate to your repository on GitHub and do **Set up in Desktop**. This is a way of quickly cloning this repository locally. Now you see that instead of options to **Push** or **Fetch**, you ahve an option to *publish branch*. Save this file in that repository with "save as" and change the working directory to that folder. Commit changes on GitHub Desktop.
+
+Now Got to the **Settings** associated with this repository. 
+
+# Video demos
+
+First, you need to set up a GitHub repository: Create a new repository
+named <username>.github.io (replace <username> with your GitHub
+username) Initialize it with a README file (optional but recommended)
+
+There are many options that go on top of the document and specify how it should be knitted. We can go with the defaults on top but we could change to something like that, specifying table of contents and a theme.
+
+```         
+title: "My R Markdown Report"
+author: "Your Name"
+date: "2025-05-10"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: united
+    highlight: tango
+```
+
+We could try to embed a video demo hosted on Figshare. [This
+points
+to](https://figshare.le.ac.uk/articles/media/The_effect_of_contrast_on_the_perceived_vehicle_speed/19635396?file=34873161)
+a video demo in support of a paper on the effect of contrast on speed
+perception.
+
+Go to the **embed** tab and copy the code displayed.
+
+# Knit this document to html
+
+To embed your Figshare video, simply paste the iframe code directly in
+your knitted .html
+
+```{}
+# note this is not R-code
+
+# You need to open the html file that has been generated and saved in the working directory
+<video controls width="600">
+    <source src="https://figshare.le.ac.uk/articles/media/The_effect_of_contrast_on_the_perceived_vehicle_speed/19635396?file=34873176/V7_FogXMarkings.mp4
+" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+```
+
+# Publishing 
+Steps 1. Repository Structure Name your main R Markdown file
+index.Rmd 
+
+Create a docs folder in your repository for the HTML output
+
+Add a .nojekyll file to the root of your repository to prevent Jekyll
+processing 
+
+2. Build the Site Click the "Knit" button in RStudio to
+convert your R Markdown to HTML Ensure the output is saved to the docs
+directory 
+
+3. Configure GitHub Pages Push your changes to GitHub Go to
+your repository settings Navigate to the "Pages" section Set the source
+to "master branch /docs folder" 
+
+Troubleshooting Tips If you encounter issues, check these common problems:
+
+* Verify that all file paths are correct 
+
+* Ensure the YAML header is properly configured Check that the docs folder contains your HTML files
+
+* Confirm that GitHub Pages is properly configured to use the docs folder
+
+* Test your document locally before publishing 
+
+* Best Practices Regular to maintain your website
+
+* Testing Knit your document locally before pushing to GitHub Check that all embedded content (including the Figshare video) displays correctly
+
+* Use Git version control to track changes effectively
+
+* Commit and push changes regularly to maintain a backup File Organization
+
+* Keep your repository organized with clear file structure Use meaningful file names 
+
+* Ensure all necessary resources are included in the repository
+
+* Your website will be available at <https://<username>.github.io after setup is complete . 
+
+* Note that it may take a few minutes for changes to appear after pushing to GitHub.
+
+# Additional resources
+You can see here usage limits for [GitHub Pages](http://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)
+
+The process of creating a page is explained [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) in more detail. 
